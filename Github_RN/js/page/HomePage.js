@@ -13,7 +13,9 @@ import  PopularPage from "./PopularPage"
 import  TrandingPage from "./TrandingPage"
 import  FavoritePage from "./FavoritePage"
 import  MyPage from "./MyPage"
-import  {Images} from "../images";
+import  {Images} from "../images"
+import  NavigationUtil from "../navigator/NavigationUtil"
+
 
 
 type Props = {};
@@ -79,6 +81,8 @@ export default class HomePage extends Component<Props> {
 
 
     render() {
+
+        NavigationUtil.navigation = this.props.navigation;
         const  Tab = this._tabNavigator();
         const AppContainer = createAppContainer(Tab);
         return  <AppContainer/>

@@ -5,13 +5,36 @@
 *
 */
 
-export default  class navigationUtil {
+export default  class NavigationUtil {
+
+
+    /*
+    *
+    *   @params 要传递的参数
+    *   @page  要跳转的页面名
+    * */
+
+    static  goPage(params, page){
+
+        const navigation = NavigationUtil.navigation;
+        if (!navigation){
+            console.log("NavigationUtil.navigator can not be null");
+            return;
+        }
+        navigation.navigate(
+            page,
+            {
+                ...params
+            }
+        )
+    }
+
 
 
     /*
     * 返回上一页
     * */
-    static  resetToHomePage(navigation){
+    static  goBack(navigation){
         navigation.goBack()
     }
 
